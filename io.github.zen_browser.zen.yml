@@ -4,7 +4,7 @@ runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 base: org.mozilla.firefox.BaseApp
 base-version: '23.08'
-command: /app/zen/zen
+command: launch-script.sh
 finish-args:
   - --share=ipc
   - --share=network
@@ -27,6 +27,7 @@ modules:
     build-commands:
       - mv zen /app/
 
+      - install -Dm0755 metadata/launch-script.sh ${FLATPAK_DEST}/bin/launch-script.sh
       - install -Dm0644 metadata/policies.json ${FLATPAK_DEST}/bin/distribution/policies.json
       - install -Dm0644 metadata/icons/io.github.zen_browser.zen.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png
       - install -Dm0644 metadata/io.github.zen_browser.zen.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
@@ -34,12 +35,12 @@ modules:
 
     sources:
       - type: archive
-        url: https://github.com/zen-browser/desktop/releases/download/1.0.0-a.13/zen.linux-generic.tar.bz2
-        sha256: ce4686b1df797af2e841d035c76a0f9cfd9971c242a8bdd381617423ae5e5cbc
+        url: https://github.com/zen-browser/desktop/releases/download/1.0.0-a.14/zen.linux-generic.tar.bz2
+        sha256: 0a82e017aa3da8a495073ae049c4c4bbe3124d99e024dd7443c7c48f2e81435d
         strip-components: 0
 
       - type: archive
         url: https://github.com/zen-browser/flatpak/releases/latest/download/archive.tar
-        sha256: 0c7f283fa68066814eba40da9698166161a6e4aa586d22eb3e016bd822f23604
+        sha256: 7129bab597a31b3db3e0c47a1fda61dbafda42856a2216355ccda84aae938833
         strip-components: 0
         dest: metadata
