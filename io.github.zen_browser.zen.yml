@@ -35,8 +35,8 @@ modules:
 
     sources:
       - type: archive
-        url: https://github.com/zen-browser/desktop/releases/download/1.0.0-a.21/zen.linux-generic.tar.bz2
-        sha256: 8947015c2b4316eb9c941aeb129490401754a6a785ff5bfaec1c8c131cfe0496
+        url: https://github.com/zen-browser/desktop/releases/download/1.0.0-a.22/zen.linux-generic.tar.bz2
+        sha256: 50b9535c86bae634a3de3fa9fe1fcfa5b2d1b95414424b907f908d1cfe9a0904
         strip-components: 0
 
       - type: archive
