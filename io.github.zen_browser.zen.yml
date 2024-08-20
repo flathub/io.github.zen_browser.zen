@@ -29,18 +29,18 @@ modules:
 
       - install -Dm0755 metadata/launch-script.sh ${FLATPAK_DEST}/bin/launch-script.sh
       - install -Dm0644 metadata/policies.json ${FLATPAK_DEST}/bin/distribution/policies.json
-      - install -Dm0644 metadata/icons/io.github.zen_browser.zen.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png
+      - install -Dm0644 metadata/icons/io.github.zen_browser.zen.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
       - install -Dm0644 metadata/io.github.zen_browser.zen.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
       - install -Dm0644 metadata/io.github.zen_browser.zen.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
 
     sources:
       - type: archive
-        url: https://github.com/zen-browser/desktop/releases/download/1.0.0-a.23/zen.linux-generic.tar.bz2
-        sha256: 63c7f191eb3649dd9cee21a6616e9b9303e21136b2c73e349fe1647975dc22be
+        url: https://github.com/zen-browser/desktop/releases/download/1.0.0-a.24/zen.linux-generic.tar.bz2
+        sha256: 3cbd510492131b6187999ee2b8de391016c2a78376f723dfc230f5415068057e
         strip-components: 0
 
       - type: archive
         url: https://github.com/zen-browser/flatpak/releases/latest/download/archive.tar
-        sha256: b019e8fb33045606a59ce5606b0a8ef01ead97d7e8edbce9fb1d436493a37aab
+        sha256: 8b53d3520f99eed14cdd309fdf3c33422950389dfe95d6ab7e7dfe7c4bedf670
         strip-components: 0
         dest: metadata
