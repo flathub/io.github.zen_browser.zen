@@ -4,6 +4,11 @@ runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 base: org.mozilla.firefox.BaseApp
 base-version: '23.08'
+add-extensions:
+  org.freedesktop.Platform.ffmpeg-full:
+    directory: lib/ffmpeg
+    version: 23.08
+    add-ld-path: .
 command: launch-script.sh
 finish-args:
   - --share=ipc
@@ -26,6 +31,7 @@ modules:
   - name: zen_browser
     buildsystem: simple
     build-commands:
+      - mkdir -p /app/lib/ffmpeg
       - mv zen /app/
 
       - install -Dm0755 metadata/launch-script.sh ${FLATPAK_DEST}/bin/launch-script.sh
