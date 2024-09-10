@@ -4,6 +4,11 @@ runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
 base: org.mozilla.firefox.BaseApp
 base-version: '23.08'
+add-extensions:
+  org.freedesktop.Platform.ffmpeg-full:
+    directory: lib/ffmpeg
+    version: 23.08
+    add-ld-path: .
 command: launch-script.sh
 finish-args:
   - --share=ipc
@@ -17,15 +22,18 @@ finish-args:
   - --filesystem=xdg-download:rw
   - --device=all
   - --talk-name=org.freedesktop.FileManager1
+  - --talk-name=org.freedesktop.ScreenSaver
   - --own-name=org.mozilla.zen.*
   - --own-name=org.mpris.MediaPlayer2.firefox.*
   - --system-talk-name=org.freedesktop.NetworkManager
   - --talk-name=org.a11y.Bus
+  - --env=GTK_PATH=/app/lib/gtkmodules
 modules:
   - name: zen_browser
     buildsystem: simple
     build-commands:
       - mv zen /app/
+      - mkdir -p /app/lib/ffmpeg
 
       - install -Dm0755 metadata/launch-script.sh ${FLATPAK_DEST}/bin/launch-script.sh
       - install -Dm0644 metadata/policies.json ${FLATPAK_DEST}/bin/distribution/policies.json
@@ -35,12 +43,12 @@ modules:
 
     sources:
       - type: archive
-        url: https://github.com/zen-browser/desktop/releases/download/1.0.0-a.37/zen.linux-generic.tar.bz2
-        sha256: 6b1d99a26299b16cce4210d4f7f62a0ecc4bfc81295131d7fcdfa8aac9a18988
+        url: https://github.com/zen-browser/desktop/releases/download/1.0.0-a.39/zen.linux-generic.tar.bz2
+        sha256: 9dddbca7c934a11b058d6f9f6a65dd32646be903e8b810c7c75e58d2aabe721f
         strip-components: 0
 
       - type: archive
-        url: https://github.com/zen-browser/flatpak/releases/download/1.0.0-a.37/archive.tar
-        sha256: 0f25fcd8a0664c01c2dbfe0e07ae5f5ec0c52abc7827dbcb200180638a21a9c6
+        url: https://github.com/zen-browser/flatpak/releases/download/1.0.0-a.39/archive.tar
+        sha256: d9fae8b793d82565d4b7e84ccae9fc0dbd9d67a6d1d4869f35301bed2c0fde50
         strip-components: 0
         dest: metadata
