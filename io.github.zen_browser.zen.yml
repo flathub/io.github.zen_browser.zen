@@ -43,12 +43,12 @@ modules:
 
     sources:
       - type: archive
-        url: https://github.com/zen-browser/desktop/releases/download/1.0.1-a.12/zen.linux-generic.tar.bz2
-        sha256: 297a6297d957aa04025bc95d560f4a4a20c23c3d07e0420165ba90b9681ac62a
+        url: https://github.com/zen-browser/desktop/releases/download/1.0.1-a.13/zen.linux-generic.tar.bz2
+        sha256: 684966f72fe4152a322f34339c48afa8462b6d4e4a68603f56e6405ca16319cd
         strip-components: 0
 
       - type: archive
-        url: https://github.com/zen-browser/flatpak/releases/download/1.0.1-a.12/archive.tar
-        sha256: 876d41af60fb50fbe2eebed7f0584394939787013b416c50bf8371ed88ec3b7f
+        url: https://github.com/zen-browser/flatpak/releases/download/1.0.1-a.13/archive.tar
+        sha256: ab127d775786337af71d7ea1879dc75ac7b90d86e2f13809f43c9886609df98f
         strip-components: 0
         dest: metadata
