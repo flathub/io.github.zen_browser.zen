@@ -22,6 +22,7 @@ finish-args:
   - --filesystem=xdg-download:rw
   - --device=all
   - --talk-name=org.freedesktop.FileManager1
+  - --talk-name=org.freedesktop.portal.Desktop
   - --talk-name=org.freedesktop.ScreenSaver
   - --own-name=org.mozilla.zen.*
   - --own-name=org.mpris.MediaPlayer2.firefox.*
@@ -43,12 +44,12 @@ modules:
 
     sources:
       - type: archive
-        url: https://github.com/zen-browser/desktop/releases/download/1.0.1-a.18/zen.linux-generic.tar.bz2
-        sha256: cb86a817b403ff2d1947d2996c5f11b11db711f56145bddbb40041846f5b991e
+        url: https://github.com/zen-browser/desktop/releases/download/1.0.1-a.19/zen.linux-generic.tar.bz2
+        sha256: 96eff8dd894ad03e7e5e6d25e6dc491bc5dad9f3dde1ec16fbb3a40c6930dfff
         strip-components: 0
 
       - type: archive
-        url: https://github.com/zen-browser/flatpak/releases/download/1.0.1-a.18/archive.tar
-        sha256: f71a6bf925da71847ea78206a2101e9dbf462665fdee59543b4211e7d4c9adbf
+        url: https://github.com/zen-browser/flatpak/releases/download/1.0.1-a.19/archive.tar
+        sha256: 898a674e7f1e5dcfe64752d944f1843cd606efadae7be9452fca224220c63177
         strip-components: 0
         dest: metadata
