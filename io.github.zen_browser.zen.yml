@@ -1,13 +1,13 @@
 app-id: io.github.zen_browser.zen
 runtime: org.freedesktop.Platform
-runtime-version: '23.08'
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 base: org.mozilla.firefox.BaseApp
-base-version: '23.08'
+base-version: '24.08'
 add-extensions:
   org.freedesktop.Platform.ffmpeg-full:
     directory: lib/ffmpeg
-    version: 23.08
+    version: '24.08'
     add-ld-path: .
 command: launch-script.sh
 finish-args:
@@ -28,6 +28,7 @@ finish-args:
   - --system-talk-name=org.freedesktop.NetworkManager
   - --talk-name=org.a11y.Bus
   - --env=GTK_PATH=/app/lib/gtkmodules
+  - --env=MESA_SHADER_CACHE_DIR=$XDG_RUNTIME_DIR/app/$FLATPAK_ID/cache/mesa_shader_cache_db 
 modules:
   - name: zen_browser
     buildsystem: simple
@@ -43,12 +44,12 @@ modules:
 
     sources:
       - type: archive
-        url: https://github.com/zen-browser/desktop/releases/download/1.0.1-a.19/zen.linux-generic.tar.bz2
-        sha256: 96eff8dd894ad03e7e5e6d25e6dc491bc5dad9f3dde1ec16fbb3a40c6930dfff
+        url: https://github.com/zen-browser/desktop/releases/download/1.0.1-a.21/zen.linux-generic.tar.bz2
+        sha256: b6d04ccb02cf0daf55ee11702a7e3f3f26e39504be4f11e9e52edba5a86e2b22
         strip-components: 0
 
       - type: archive
-        url: https://github.com/zen-browser/flatpak/releases/download/1.0.1-a.19/archive.tar
-        sha256: 898a674e7f1e5dcfe64752d944f1843cd606efadae7be9452fca224220c63177
+        url: https://github.com/zen-browser/flatpak/releases/download/1.0.1-a.21/archive.tar
+        sha256: 2a029a215ae919e4f30821b62c1b55133ddc33477ccb36db8e8f535918c329da
         strip-components: 0
         dest: metadata
