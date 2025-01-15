@@ -1,5 +1,6 @@
 {
     "only-arches": ["x86_64"],
     "end-of-life": "The application has been renamed to app.zen_browser.zen.",
-    "end-of-life-rebase": "app.zen_browser.zen"
+    "end-of-life-rebase": "app.zen_browser.zen",
+    "rename-desktop-file": "app.zen_browser.zen.desktop"
 }
